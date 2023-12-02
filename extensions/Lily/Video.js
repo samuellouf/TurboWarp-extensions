@@ -131,6 +131,10 @@
         name: "Video",
         blocks: [
           {
+            blockType: Scratch.BlockType.XML,
+            xml: "<sep gap='6'/><label text='Only direct downloads will work, use'/><sep gap='-12'/><label text='the Iframe extension for YouTube.'/><sep gap='24'/>",
+          },
+          {
             opcode: "loadVideoURL",
             blockType: Scratch.BlockType.COMMAND,
             text: "load video from URL [URL] as [NAME]",
@@ -329,7 +333,8 @@
 
       if (
         url.startsWith("https://www.youtube.com/") ||
-        url.startsWith("https://youtube.com/")
+        url.startsWith("https://youtube.com/") ||
+        url.startsWith("https://youtu.be/")
       ) {
         alert(
           [
